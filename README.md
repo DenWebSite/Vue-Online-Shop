@@ -1,35 +1,81 @@
-# vue-sneakers
+**Интернет-магазин кроссовок на Vue 3 + Tailwind CSS**
 
-This template should help get you started developing with Vue 3 in Vite.
+Каталог с поиском и сортировкой, карточки товаров, корзина-drawer и закладки.
 
-## Recommended IDE Setup
+## О проекте
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+**Vue Sneakers** — учебный pet-проект: витрина магазина кроссовок, собранная на Composition API. Товары подгружаются с REST API, а поиск и сортировка выполняются на стороне сервера. Интерфейс полностью построен на утилитных классах Tailwind CSS, без самописных стилей.
 
-## Customize configuration
+## Возможности
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- **Каталог товаров** — сетка из 4 колонок с карточками (фото, название, цена)
+- **Поиск** по названию с автоматическим обновлением выдачи
+- **Сортировка** — по названию, сначала дешёвые, сначала дорогие
+- **Закладки** — синхронизация избранного с сервером
+- **Корзина** — боковая панель с позициями, итогом и налогом
 
-## Project Setup
+## Технологии
+
+| Категория | Инструменты |
+| --- | --- |
+| Фреймворк | [Vue 3](https://vuejs.org/) |
+| Сборка | [Vite 7](https://vite.dev/) |
+| Стили | [Tailwind CSS 3](https://tailwindcss.com/), PostCSS, Autoprefixer |
+| HTTP | [Axios](https://axios-http.com/) |
+| Бэкенд | [mokky.dev](https://mokky.dev/) |
+| Качество кода | ESLint 9, Prettier, EditorConfig |
+
+## Быстрый старт
+
+### Требования
+
+- **Node.js** `^20.19.0` или `>=22.12.0`
+- **npm**
+
+### Установка и запуск
 
 ```sh
+# 1. Клонировать репозиторий
+git clone https://github.com/DenWebSite/vue-sneakers.git
+cd vue-sneakers
+
+# 2. Установить зависимости
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# 3. Запустить dev-сервер с hot-reload
 npm run dev
 ```
 
-### Compile and Minify for Production
+## 🗂 Структура проекта
 
-```sh
-npm run build
+```
+vue-sneakers/
+├── public/                 # Статика: логотип, иконки, фото кроссовок
+│   └── sneakers/
+├── src/
+│   ├── assets/
+│   │   └── main.css        # Подключение Tailwind и базовые стили
+│   ├── components/
+│   │   ├── Header.vue      # Шапка: логотип, корзина, закладки, профиль
+│   │   ├── CardList.vue    # Сетка карточек
+│   │   ├── Card.vue        # Карточка товара
+│   │   ├── Drawer.vue      # Боковая панель корзины
+│   │   ├── DrawerHead.vue  # Заголовок корзины
+│   │   ├── CartItemList.vue
+│   │   └── CartItem.vue    # Позиция в корзине
+│   ├── App.vue             # Корневой компонент: загрузка данных, фильтры
+│   └── main.js             # Точка входа
+├── tailwind.config.cjs
+├── postcss.config.cjs
+├── vite.config.js
+└── package.json
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## API
 
-```sh
-npm run lint
-```
+Данные загружаются с мок-сервера [mokky.dev](https://mokky.dev/).
+---
+
+<div align="center">
+  Сделано с 💚 на Vue
+</div>
