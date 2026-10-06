@@ -46,7 +46,7 @@ npm install
 npm run dev
 ```
 
-## 🗂 Структура проекта
+## Структура проекта
 
 ```
 vue-sneakers/
